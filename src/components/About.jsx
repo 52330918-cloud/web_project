@@ -29,7 +29,14 @@ function About() {
           </div>
         </section>
 
-        
+         <section className="bg-white border rounded-2xl p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-gray-800 mb-3">How to use</h2>
+          <ol className="list-decimal  space-y-2 text-gray-700">
+            <li>Visit the <span className="font-medium">Courses</span> page to browse offerings.</li>
+            <li>Select a course to view details and prerequisites.</li>
+            <li>Click <span className="font-medium">Register</span> to enroll and confirm your selection.</li>
+          </ol>
+        </section>
 
     </main>
     </div>
