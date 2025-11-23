@@ -38,6 +38,19 @@ function Login({ onLoginSuccess }) {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg"
               />
             </div>
+             <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-800 mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg "
+              />
+            </div>
 </form>
 
 
