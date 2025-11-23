@@ -4,8 +4,41 @@ function Registration() {
     const [selectedCourse, setSelectedCourse] = useState('Math');
   const [registeredCourses, setRegisteredCourses] = useState([]);
   const courseOptions = ['Physics', 'Math', 'Chemistry', 'Biology', 'Computer Science', 'English', 'History'];
+  const handleAddCourse = (e) => {
+    e.preventDefault();
+    if (!registeredCourses.includes(selectedCourse)) {
+      setRegisteredCourses([...registeredCourses, selectedCourse]);
+    }
+  };
+
+  const handleRemoveCourse = (course) => {
+    setRegisteredCourses(registeredCourses.filter(c => c !== course));
+  };
   return (
-    <div>Registration</div>
+   <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-amber-100 via-blue-100 to-purple-100 py-10">
+<div className=" bg-white/70 border border-purple-300 shadow-xl rounded-2xl p-8 max-w-lg w-full flex flex-col items-center mb-10">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-purple-700">📝 Register a Course</h2>
+        <form className="w-full flex flex-col gap-4 items-center" onSubmit={handleAddCourse}>
+          <select
+            className="px-4 py-2 rounded-lg border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300 w-full"
+            value={selectedCourse}
+            onChange={e => setSelectedCourse(e.target.value)}
+          >
+            {courseOptions.map(course => (
+              <option key={course} value={course}>{course}</option>
+            ))}
+          </select>
+          <button
+            type="submit"
+            className="mt-2 px-5 py-2 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg shadow transition duration-200 w-full"
+          >
+            Add Course
+          </button>
+        </form>
+      </div>
+
+
+   </div>
   )
 }
 
